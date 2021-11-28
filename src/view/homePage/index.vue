@@ -1,13 +1,14 @@
 <template>
-  <div>
+  <Layout>
     {{fatherss}}
-    <PersonTable :list="personList" @father="father"></PersonTable>
-  </div>
+    <table :list="personList" @father="father"></table>
+  </Layout>
 </template>
 
 <script>
 import {personList,get} from "../../api/index"
-import PersonTable from "./components/personTable.vue"
+import table from "./components/table"
+import Layout from "../../components/Layout"
 export default {
   name: "",
   data() {
@@ -20,7 +21,8 @@ export default {
     this.getList();
   },
   components:{
-    PersonTable
+    table,
+    Layout
   },
   methods: {
     getList() {
